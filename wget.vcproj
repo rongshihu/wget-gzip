@@ -320,14 +320,6 @@
 				RelativePath=".\src\xmalloc.h"
 				>
 			</File>
-			<File
-				RelativePath=".\include\zconf.h"
-				>
-			</File>
-			<File
-				RelativePath=".\include\zlib.h"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"

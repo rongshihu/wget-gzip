@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wget", "wget.vcproj", "{2CC10175-D05E-470F-BBC3-F9F9B37F28CD}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "wget-gzip", "..\Setup1\Setup1.vdproj", "{33DCD849-0D8B-483F-8B76-78EFC6FCB0EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,8 @@ Global
 		{2CC10175-D05E-470F-BBC3-F9F9B37F28CD}.Debug|Win32.Build.0 = Debug|Win32
 		{2CC10175-D05E-470F-BBC3-F9F9B37F28CD}.Release|Win32.ActiveCfg = Release|Win32
 		{2CC10175-D05E-470F-BBC3-F9F9B37F28CD}.Release|Win32.Build.0 = Release|Win32
+		{33DCD849-0D8B-483F-8B76-78EFC6FCB0EE}.Debug|Win32.ActiveCfg = Debug
+		{33DCD849-0D8B-483F-8B76-78EFC6FCB0EE}.Release|Win32.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
