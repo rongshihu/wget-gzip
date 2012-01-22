@@ -37,7 +37,7 @@ as that of the covered work.  */
 #define WGET_H
 
 /* Disable assertions when debug support is not compiled in. */
-#ifndef ENABLE_DEBUG
+#if !defined(ENABLE_DEBUG) && !defined(NDEBUG)
 # define NDEBUG
 #endif
 
