@@ -4,6 +4,7 @@
 	Version="9,00"
 	Name="wget"
 	ProjectGUID="{2CC10175-D05E-470F-BBC3-F9F9B37F28CD}"
+	RootNamespace="wget"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="0"
 	>
@@ -487,6 +488,14 @@
 		</Filter>
 		<File
 			RelativePath=".\README.md"
+			>
+		</File>
+		<File
+			RelativePath=".\include\README.txt"
+			>
+		</File>
+		<File
+			RelativePath=".\lib\README.txt"
 			>
 		</File>
 	</Files>
