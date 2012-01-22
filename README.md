@@ -27,6 +27,6 @@ I'm using Visual C/C++ 2008 with Git Source Control Provider, so I'm just pullin
 		- Copy _lib_ from the archite to project's _lib_ directory
 		- Copy _include_ from the archite to project's _include_ directory
 * External runtime libraries (DLL) to run wget-gzip
-		- All DLL files from the _gnutls_ ZIP
-		- _zlib1.dll_ from [zlib-bin](http://gnuwin32.sourceforge.net/downlinks/zlib-bin-zip.php)
-		- You need to place these in SYSTEM32 or in the same folder as _wget.exe_ binary
+	- All DLL files from the _gnutls_ ZIP
+	- _zlib1.dll_ from [zlib-bin](http://gnuwin32.sourceforge.net/downlinks/zlib-bin-zip.php)
+	- You need to place these in SYSTEM32 or in the same folder as _wget.exe_ binary
