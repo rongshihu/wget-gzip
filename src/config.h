@@ -209,6 +209,7 @@
 
 /* Define to `unsigned' if <sys/types.h> does not define. */
 /* #undef size_t */
+#define ssize_t size_t
 
 /* Define to int or size_t on systems without socklen_t. */
 #define socklen_t int
