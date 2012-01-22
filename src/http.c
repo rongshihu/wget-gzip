@@ -1373,8 +1373,8 @@ gethttp (struct url *u, struct http_stat *hs, int *dt, struct url *proxy)
   wgint contlen, contrange;
   struct url *conn;
   FILE *fp;
-  int compression_enabled = 1;
-  char content_encoding[sizeof("gzip")*2];
+  bool compression_enabled = false;
+  char content_encoding[sizeof("identity")*2];
 
   int sock = -1;
   int flags;
@@ -1487,7 +1487,7 @@ gethttp (struct url *u, struct http_stat *hs, int *dt, struct url *proxy)
   request_set_header (req, "Accept", "*/*", rel_none);
 
   /* request gzip compression - whether server supports it will be checked by Content-Encoding later */
-  request_set_header (req, "Accept-Encoding", "gzip", rel_none);
+  request_set_header (req, "Accept-Encoding", "gzip;q=1.0, identity; q=0.5, *;q=0", rel_none);
 
   /* Find the username and password for authentication. */
   user = u->user;
@@ -1811,12 +1811,22 @@ gethttp (struct url *u, struct http_stat *hs, int *dt, struct url *proxy)
     }
 
   /* Check if output is compressed */
-  if(!resp_header_copy(resp, "Content-Encoding", content_encoding, sizeof("gzip")))
+    if(resp_header_copy(resp, "Content-Encoding", content_encoding, sizeof(content_encoding)) == true)
 	  {
-	  if( memcmp(content_encoding, "gzip", sizeof("gzip") == 0))
+	  if( memcmp(content_encoding, "gzip", sizeof("gzip")) == 0)
 		  {
-			compression_enabled = 1;
-			logprintf (LOG_VERBOSE, "gzip compression enabled");
+			compression_enabled = true;
+			logprintf (LOG_VERBOSE, "gzip compression enabled\n");
+		  } else if(memcmp(content_encoding, "identity", sizeof("identity")) == 0)
+		  {
+			// no compression but all ok
+			compression_enabled = false;
+		  } else
+		  {
+			logprintf (LOG_VERBOSE, "unsupported content encoding: %s\n", content_encoding);
+			CLOSE_INVALIDATE (sock);
+			request_free (req);
+			return HERR;
 		  }
 	  }
 
