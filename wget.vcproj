@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="wget"
 	ProjectGUID="{2CC10175-D05E-470F-BBC3-F9F9B37F28CD}"
 	RootNamespace="wget"
@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;C:\Users\kravietz\Downloads\wget-1.11.4-1-src\src&quot;;&quot;C:\Users\kravietz\Downloads\wget-1.11.4-1-src\include&quot;"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)\include&quot;;&quot;$(ProjectDir)\src&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;WINDOWS;HAVE_CONFIG_H"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -61,9 +61,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				LinkLibraryDependencies="true"
 				AdditionalDependencies="Ws2_32.lib libgnutls.dll.a zlib.lib"
 				LinkIncremental="0"
-				AdditionalLibraryDirectories="&quot;C:\Users\kravietz\Downloads\wget-1.11.4-1-src\lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(ProjectDir)\lib&quot;"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				TargetMachine="1"
@@ -113,7 +114,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;C:\Users\kravietz\Downloads\wget-1.11.4-1-src\src&quot;;&quot;C:\Users\kravietz\Downloads\wget-1.11.4-1-src\include&quot;"
+				AdditionalIncludeDirectories="$(IntDir)\..\include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;WINDOWS"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="0"
@@ -731,11 +732,11 @@
 			>
 		</File>
 		<File
-			RelativePath=".\lib\README.txt"
+			RelativePath=".\include\README.txt"
 			>
 		</File>
 		<File
-			RelativePath=".\include\README.txt"
+			RelativePath=".\lib\README.txt"
 			>
 		</File>
 	</Files>
