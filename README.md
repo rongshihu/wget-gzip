@@ -17,7 +17,7 @@ This is a branch of GNU Wget that adds support for transparent HTTP compression.
 
 ## Building
 
-I'm using Visual C/C++ 2008 with Git Source Control Provider, so I'm just pulling the solution directly from GitHub. There are two empy dirctories _lib_ and _include_ that need to be populated with external library files.
+I'm using Visual C/C++ 2008 with [Git Source Control Provider](http://gitscc.codeplex.com/), so I'm just pulling the solution directly from GitHub. There are two empy dirctories _lib_ and _include_ that need to be populated with external library files.
 
 * External libraries to compile wget-gzip
 	- [zlib-lib](http://gnuwin32.sourceforge.net/downlinks/zlib-lib-zip.php) from [GNU Win32 Zlib page](http://gnuwin32.sourceforge.net/packages/zlib.htm)
