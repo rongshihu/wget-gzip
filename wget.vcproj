@@ -114,7 +114,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="$(IntDir)\..\include"
+				Optimization="3"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)\include&quot;;&quot;$(ProjectDir)\src&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;WINDOWS"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="0"
@@ -135,7 +136,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="libgnutls.dll.a zlib.lib Ws2_32.lib"
 				LinkIncremental="0"
-				AdditionalLibraryDirectories="&quot;C:\Users\kravietz\Downloads\wget-1.11.4-1-src\lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(ProjectDir)\lib&quot;"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				OptimizeReferences="2"
