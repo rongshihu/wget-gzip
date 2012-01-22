@@ -122,10 +122,14 @@ typedef unsigned char _Bool;
 /* These are defined in cmpt.c if missing, so we must declare
    them.  */
 #ifndef HAVE_STRCASECMP
+#ifndef WINDOWS
 int strcasecmp ();
 #endif
+#endif
 #ifndef HAVE_STRNCASECMP
+#ifndef WINDOWS
 int strncasecmp ();
+#endif
 #endif
 #ifndef HAVE_STRPTIME
 char *strptime ();

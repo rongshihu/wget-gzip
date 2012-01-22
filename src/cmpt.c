@@ -43,6 +43,8 @@ as that of the covered work.  */
 
 #include "wget.h"
 
+#include "mswindows.h"
+
 /* Some systems lack certain functions normally taken for granted.
    For example, Windows doesn't have strptime, and some systems don't
    have a usable fnmatch.  This file should contain fallback
@@ -58,6 +60,9 @@ as that of the covered work.  */
    Windows functions stricmp and strnicmp.  */
 
 #ifndef HAVE_STRCASECMP
+#ifndef WINDOWS
+//#define strcasecmp(a,b) stricmp(a,b)
+//#else
 /* From GNU libc.  */
 /* Compare S1 and S2, ignoring case, returning less than, equal to or
    greater than zero if S1 is lexiographically less than,
@@ -83,9 +88,13 @@ strcasecmp (const char *s1, const char *s2)
 
   return c1 - c2;
 }
+#endif
 #endif /* not HAVE_STRCASECMP */
 
 #ifndef HAVE_STRNCASECMP
+#ifndef WINDOWS
+//#define strncasecmp(a,b,c) strnicmp(a,b,c)
+//#else
 /* From GNU libc.  */
 /* Compare no more than N characters of S1 and S2,
    ignoring case, returning less than, equal to or
@@ -111,6 +120,7 @@ strncasecmp (const char *s1, const char *s2, size_t n)
 
   return c1 - c2;
 }
+#endif
 #endif /* not HAVE_STRNCASECMP */
 
 #ifndef HAVE_MEMRCHR
